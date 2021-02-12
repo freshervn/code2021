@@ -1,0 +1,231 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'AnkeCalligraphthuphap';
+            src: url('thuphapuni/HL-OngDo-Unicode.ttf');
+        }
+        
+         :root {
+            --theme-color-1: rgb(236, 196, 66);
+        }
+        
+        body {
+            background-image: linear-gradient(rgba(224, 60, 46, .9) 21%, rgba(0, 0, 0, .9) 100%), url(trau2021.jpg);
+            background-size: 100%, 100%;
+            background-position: 0% 0%, 50% 50%;
+            font-family: 'Brygada 1918', serif !important;
+        }
+        
+        .border-double-5-gold {
+            border: 5px double rgb(236, 196, 66);
+            padding: 15px;
+        }
+        
+        .border-3-gold {
+            border: 3px solid rgb(236, 196, 66);
+            padding: 15px;
+        }
+        
+        .color-gold {
+            color: rgb(236, 196, 66);
+        }
+        
+        .background-theme {
+            background-image: linear-gradient(rgba(224, 60, 46, .9) 21%, rgba(0, 0, 0, .5) 100%);
+        }
+        
+        .font-thu-phap {
+            font-family: 'AnkeCalligraphthuphap';
+        }
+        
+         ::placeholder {
+            color: rgb(236, 196, 66);
+        }
+        
+        input {
+            color: whitesmoke;
+            text-shadow: 1px 1px 1px rgba(136, 196, 66, .5);
+        }
+        
+        input:focus {
+            box-shadow: 2px 2px 2px 2px rgba(236, 196, 66, .5), 2px -2px 2px 2px rgba(236, 196, 66, .5), -2px 2px 2px 2px rgba(236, 196, 66, .5), -2px -2px 2px 2px rgba(236, 196, 66, .5);
+            color: whitesmoke;
+            text-shadow: 1px 1px 1px rgba(136, 196, 66, .5);
+        }
+        
+        .hover-shadown1:hover {
+            -webkit-box-shadow: 2px 2px 2px 2px var(--theme-color-1), -2px 2px 2px 2px var(--theme-color-1), 2px -2px 2px 2px var(--theme-color-1), -2px -2px 2px 2px var(--theme-color-1);
+            box-shadow: 2px 2px 2px 2px var(--theme-color-1), -2px 2px 2px 2px var(--theme-color-1), 2px -2px 2px 2px var(--theme-color-1), -2px -2px 2px 2px var(--theme-color-1);
+            color: var(--theme-color-1);
+            transition: 0.3s ease-in-out;
+            font-weight: bold;
+        }
+        
+        @keyframes mydropdown {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        #que,
+        #form-in div {
+            animation-name: mydropdown;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            background-image: linear-gradient(rgba(224, 60, 46, .8) 0%, rgba(0, 0, 0, .6) 0%);
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="position-absolute top-50 start-50 translate-middle  " id="form-in" style="width: 260px; ">
+        <h1 class="font-thu-phap color-gold  text-center mb-3" style="font-size: calc( 24px + 2vw );">chúc mừng năm mới</h1>
+        <div class="border-double-5-gold  background-theme col-12 text-center">
+            <h6 class="color-gold text-start mb-3" style="font-size:16px">xem quẻ bói bằng cách nhập tên của bạn</h6>
+            <input type="text " id="name" style="width: 100%; background:transparent; outline: none; font-size:18px " class="border-3-gold " placeholder="Nhập họ tên của bạn... ">
+            <button onclick="rutque()" class="mt-3 border-double-5-gold py-1 px-3 hover-shadown1 font-thu-phap color-gold" style="background:transparent; font-size:22px">Xem quẻ</button>
+        </div>
+    </div>
+    <div class="position-absolute top-50 start-50 translate-middle background-theme border-double-5-gold text-center d-none" style="width: 260px;" id="que">
+        <h1 class="color-gold  text-center mb-3" style="font-size: calc( 14px + 2vw );"><b>Quẻ bói</b></h1>
+        <span id="que_number" class="py-1 px-3 m-auto rounded border-3-gold" style="background-color:var(--theme-color-1);font-weight: bold;">16</span>
+        <h6 class="color-gold text-start mb-3 mt-3" style="font-size:16px">Trong năm nay <span id="short-name">bạn</span> sẽ</h6>
+        <p class="border-3-gold color-gold font-thu-phap" style="font-size:32px" id="thien-y">đi chơi cùng thần chết</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js " integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0 " crossorigin="anonymous "></script>
+    <!-- bat dau su ly -->
+    <script>
+        function rutque() {
+            // kiem tra xem input co trong khong da
+            // neu sau trong thi nhap lai
+            if (document.getElementById('name').value == "") {
+                alert('Bạn chưa nhập tên nha, nhập lại đi nhá');
+            } else {
+                // luu gia tri vao 1 bien
+                var ten = document.getElementById('name').value;
+                // xoa het ky tu trang cuoi xau
+                while (ten[ten.length - 1] == " ") {
+                    ten = ten.slice(0, -1);
+                }
+                // doc cac ky tu den khi gap ky tu trang
+                let i = 1;
+                var short_name = "";
+                while ((ten[ten.length - i] != ' ') && (ten.length >= i)) {
+                    short_name = ten[ten.length - i] + short_name;
+                    i++;
+                }
+                $('#short-name').html(short_name);
+                // khoi tao so ngau nhien                            
+                var first_word, second_word, first_num, second_num;
+                // khoi tao cho bien dau tien
+                switch (Math.floor(Math.random() * 10)) {
+                    case 0:
+                        first_word = "Chúc tết";
+                        first_num = '0';
+                        break;
+                    case 1:
+                        first_word = "Lì xì cho";
+                        first_num = '1';
+                        break;
+                    case 2:
+                        first_word = "Hát cùng";
+                        first_num = '2';
+                        break;
+                    case 3:
+                        first_word = "Chụp ảnh chung với";
+                        first_num = '3';
+                        break;
+                    case 4:
+                        first_word = "Đi ăn với";
+                        first_num = '4';
+                        break;
+                    case 5:
+                        first_word = "Xem phim cùng";
+                        first_num = '5';
+                        break;
+                    case 6:
+                        first_word = "Nắm tay";
+                        first_num = '6';
+                        break;
+                    case 7:
+                        first_word = "Đi dạo cạnh";
+                        first_num = '7';
+                        break;
+                    case 8:
+                        first_word = "Ngắm nhìn";
+                        first_num = '8';
+                        break;
+                    case 9:
+                        first_word = "Nhậu với";
+                        first_num = '9';
+                        break;
+                }
+                switch (Math.floor(Math.random() * 10)) {
+                    case 0:
+                        second_word = "Chủ tịch nước";
+                        second_num = '0';
+                        break;
+                    case 1:
+                        second_word = "Trùm xã hội đen";
+                        second_num = '1';
+                        break;
+                    case 2:
+                        second_word = "Thú cưng";
+                        second_num = '2';
+                        break;
+                    case 3:
+                        second_word = "khủng long";
+                        second_num = '3';
+                        break;
+                    case 4:
+                        second_word = "chính mình";
+                        second_num = '4';
+                        break;
+                    case 5:
+                        second_word = "bạn thân";
+                        second_num = '5';
+                        break;
+                    case 6:
+                        second_word = "tổng thống mỹ";
+                        second_num = '6';
+                        break;
+                    case 7:
+                        second_word = "Sasuke";
+                        second_num = '7';
+                        break;
+                    case 8:
+                        second_word = "Mặt trời";
+                        second_num = '8';
+                        break;
+                    case 9:
+                        second_word = "Bia";
+                        second_num = '9';
+                        break;
+                }
+                $("#form-in").addClass("d-none");
+                $('#que').removeClass('d-none');
+                $('#que_number').html(first_num + second_num);
+                $('#thien-y').html(first_word + " " + second_word);
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
