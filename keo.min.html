@@ -1,0 +1,14 @@
+<html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Brygada+1918:wght@400;700&display=swap" rel="stylesheet"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><title>Document</title><!-- css setup --><link rel="stylesheet" href="keo.css"><style>.scrolling-bar.scrolling-bar-2{height:10px}</style></head><body><!-- tạo thanh viền bên ngoài --><!-- các thanh kéo sẽ có chung class scrolling-bar --><div class="scrolling-bar" id="scrolling-bar-1"><!-- tạo 1 phần bên trong rộng hơn phần bên ngoài để  có thanh kéo sang ngang --><div class="scrolling-setting" data-level-scrol="3"><!-- data-level-scrol là thuộc tính tự đặt, --><!-- dùng jquery lấy giá trị của data để chia ra số lượng mắt xích --> <span class="scroll-position">0</span><!-- chứa vị trí hiện tại  của thanh--></div></div><p id="output">giá sản phẩm <span class="price"></span></p><div class="scrolling-bar" id="scrolling-bar-2"><!-- tạo 1 phần bên trong rộng hơn phần bên ngoài để  có thanh kéo sang ngang --><div class="scrolling-setting" data-level-scrol="16"><!-- data-level-scrol là thuộc tính tự đặt, dùng jquery lấy giá trị của data để chia thang kéo --><!-- chứa vị trí hiện tại  của thanh--> <span class="scroll-position">0</span></div></div><p id="output-2">giá sản phẩm <span class="price"></span></p><div class="scrolling-bar" id="scrolling-bar-3"><!-- tạo 1 phần bên trong rộng hơn phần bên ngoài để  có thanh kéo sang ngang --><div class="scrolling-setting" data-level-scrol="100"><!-- data-level-scrol là thuộc tính tự đặt, dùng jquery lấy giá trị của data để chia thang kéo --><!-- chứa vị trí hiện tại  của thanh--> <span class="scroll-position">0</span></div></div><p id="output-3">giá sản phẩm <span class="price"></span></p><!-- js tùy chỉnh --><script>$(document).ready(
+            function () {
+                $('.scrolling-bar').scroll(
+                    function () {
+                        // js cho thanh kéo 1
+                        // in giá trị của thanh kéo lên id cụ thể
+                        $('#output .price').html($('#scrolling-bar-1').find('.scroll-position').html());
+                        // js cho thanh kéo 2
+                        $('#output-2 .price').html($('#scrolling-bar-2').find('.scroll-position').html());
+                        // js cho thanh keo 3
+                        $('#output-3 .price').html($('#scrolling-bar-3').find('.scroll-position').html());
+                    }
+                )
+            })</script><!-- js setup--><script src="setupscrollbar.min.js"></script></body></html>
