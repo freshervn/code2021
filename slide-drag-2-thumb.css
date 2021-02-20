@@ -1,0 +1,58 @@
+.drag-2-thumb {
+  margin-left: 50px;
+  background-color: rgba(69, 168, 39, 0.8);
+  width: 500px;
+  height: 5px;
+  border-radius: calc(5px)/50%;
+  padding: 0;
+  position: relative;
+}
+
+.drag-2-thumb .track {
+  background: red;
+  height: 5px;
+  position: absolute;
+  display: block;
+}
+
+.drag-2-thumb .drag-thumb {
+  display: block;
+  height: 12.5px;
+  width: 12.5px;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  top: 50%;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  cursor: pointer;
+}
+
+.drag-2-thumb .drag-thumb.thumb-left {
+  left: 50%;
+}
+
+.drag-2-thumb .drag-thumb.thumb-right {
+  left: 70%;
+}
+
+.drag-2-thumb .drag-thumb:hover {
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(255, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px 5px rgba(255, 0, 0, 0.3);
+}
+
+.drag-2-thumb .drag-thumb:active {
+  -webkit-box-shadow: 0px 0px 7.5px 7.5px rgba(255, 0, 0, 0.3);
+          box-shadow: 0px 0px 7.5px 7.5px rgba(255, 0, 0, 0.3);
+}
+
+.drag-2-thumb .drag-thumb:focus {
+  -webkit-box-shadow: 0px 0px 7.5px 7.5px rgba(255, 0, 0, 0.3);
+          box-shadow: 0px 0px 7.5px 7.5px rgba(255, 0, 0, 0.3);
+}
+
+.drag-2-thumb .drag-thumb:focus-within {
+  -webkit-box-shadow: 0px 0px 7.5px 7.5px rgba(255, 0, 0, 0.3);
+          box-shadow: 0px 0px 7.5px 7.5px rgba(255, 0, 0, 0.3);
+}
+/*# sourceMappingURL=slide-drag-2-thumb.css.map */

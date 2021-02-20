@@ -1,0 +1,62 @@
+.drag-2-thumb {
+    margin-left: 50px;
+    $Height: 5px;
+    $Width: 500px;
+
+    $ThumbColor:red;
+    $TrackColor:#45a827;
+    $BackgroundColor:rgba($TrackColor, $alpha: 0.8);
+    $ShadownColor: rgba($ThumbColor,$alpha:0.3);
+
+    $HoverSize: $Height;
+    $HoverBlur: $Height;
+
+    $FocusSize: $HoverSize * 1.5 ;
+    $FocusBlur: $HoverSize * 1.5 ;
+
+
+    background-color:$BackgroundColor;
+    width: $Width;
+    height: $Height;
+
+    border-radius: calc(#{$Height} ) / 50%;
+    padding: 0;
+    position: relative;
+    .track{
+        background:  red; 
+        height: $Height;
+        position: absolute;
+        display: block;
+    }
+    .drag-thumb {        
+        display: block;
+        height: $Height * 2.5;
+        width: $Height * 2.5;
+        transform: translate(-0%,-50%);      
+        top: 50%;  
+        border-radius: 50%;
+        background-color: $ThumbColor;    
+        position: absolute; 
+        cursor: pointer;
+        &.thumb-left{            
+            left: 50%;
+        }           
+        &.thumb-right{
+            left: 70%;
+        }     
+        &:hover{
+            box-shadow: 0px 0px $HoverBlur $HoverSize $ShadownColor;
+        }  
+        &:active{
+            box-shadow: 0px 0px $FocusBlur $FocusSize $ShadownColor;
+        } 
+        &:focus{
+            box-shadow: 0px 0px $FocusBlur $FocusSize $ShadownColor;
+        } 
+        &:focus-within{
+            box-shadow: 0px 0px $FocusBlur $FocusSize $ShadownColor;
+        } 
+    }
+
+}
+
